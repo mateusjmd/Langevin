@@ -16,15 +16,13 @@
 
 </div>
 
----
 
 ## Visão Geral
 
 Este repositório contém um Jupyter Notebook de caráter pedagógico-científico dedicado ao estudo rigoroso do **Movimento Browniano** e de sua formulação dinâmica via **Equação de Langevin**. O material integra fundamentação teórica com implementação computacional, cobrindo desde o formalismo do cálculo estocástico até a análise quantitativa de erros de integração numérica.
 
-O notebook foi concebido como material complementar ao artigo homônimo produzido no âmbito da disciplina de Matemática Avançada do curso de Bacharelado em Ciência da ILUM – Escola de Ciência (CNPEM), e segue os padrões de qualidade gráfica e rigor analítico de periódicos científicos.
+O notebook foi concebido como projeto final da disciplina em Equações Diferenciais, cursada em 2025.2 na Ilum - Escola de Ciência.
 
----
 
 ## Conteúdo
 
@@ -40,7 +38,6 @@ O notebook está organizado em sete seções progressivas:
 | 6 | **Análises Avançadas** | Teorema de Green–Kubo; coeficiente de difusão de Einstein; espaço de fase estocástico; estudo paramétrico em γ e σ |
 | 7 | **Potencial Harmônico** | Extensão para armadilha óptica; comparação difusão livre vs. potencial harmônico; distribuição estacionária de posição |
 
----
 
 ## Fundamentos Teóricos
 
@@ -62,18 +59,16 @@ O **Teorema de Green–Kubo** estabelece a relação entre o coeficiente de difu
 
 $$D = \int_0^\infty \langle v(0)\,v(\tau) \rangle\,d\tau = \frac{\sigma^2}{2m^2\gamma}$$
 
----
 
 ## Funcionalidades Computacionais
 
 - **`euler_maruyama()`** — integrador vetorizado para $M$ trajetórias simultâneas, com suporte a incrementos de Wiener externos para análise de erro forte *pathwise*
 - **`ou_exact()`** — simulador de referência baseado na transição condicional gaussiana exata do processo OU, sem acumulação de erros de discretização
 - **`langevin_harmonic()`** — extensão para campo de força harmônico externo (modelo de armadilha óptica)
-- Funções analíticas centralizadas: $\mathbb{E}[v(t)]$, $\text{Var}[v(t)]$, $C_v(\tau)$, MSD$(t)$, $p_\infty(v)$
+- Funções analíticas centralizadas: $\mathbb{E}[v(t)]$, $\text{Var}[v(t)]$, $C_v(\tau)$, $\mathrm{MSD}(t)$, $p_\infty(v)$
 - Análise de convergência forte e fraca com geração de incrementos compatíveis entre diferentes resoluções
 - Cálculo do coeficiente de difusão por integração numérica da VACF (Green–Kubo) com comparação analítica
 
----
 
 ## Pré-requisitos
 
@@ -98,7 +93,6 @@ ou via `conda`:
 conda install numpy matplotlib scipy tabulate jupyter
 ```
 
----
 
 ## Execução
 
@@ -112,7 +106,6 @@ jupyter notebook Langevin.ipynb
 
 Todos os parâmetros físicos do sistema ($m$, $\gamma$, $\sigma$) são definidos centralmente na **Seção 2** do notebook, facilitando a exploração de diferentes regimes dinâmicos sem modificações nas células subsequentes.
 
----
 
 ## Estrutura do Repositório
 
@@ -121,10 +114,9 @@ Langevin/
 │
 ├── Langevin.ipynb    # Notebook principal
 ├── Langevin.pdf      # Artigo de referência (ILUM/CNPEM, 2026)
-└── README.md         # Este arquivo
+└── README.md
 ```
 
----
 
 ## Resultados Ilustrativos
 
@@ -137,13 +129,11 @@ O notebook reproduz e valida os seguintes resultados analíticos com precisão n
 | Ordem de convergência forte | `0.5` | `≈ 0.50–0.55` |
 | Ordem de convergência fraca | `1.0` | `≈ 0.90–1.05` |
 
-*Valores obtidos com $m = \gamma = \sigma = 1$, $\Delta t = 10^{-2}$, $M = 2000$ trajetórias.*
-
----
+> Valores obtidos com $m = \gamma = \sigma = 1$, $\Delta t = 10^{-2}$, $M = 2000$ trajetórias.
 
 ## Autores
 
-Trabalho desenvolvido por discentes do Bacharelado em Ciência da **ILUM – Escola de Ciência**, instituição vinculada ao **Centro Nacional de Pesquisa em Energia e Materiais (CNPEM)**.
+O presente projeto foi desenvolvido pelos discentes [Giovani Massayuki Miranda Nagano](https://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K1100392J7), [Mateus de Jesus Mendes](https://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K1598982E2) e [Matheus Macedo do Nascimento]() sob a orientação do Prof. Dr. [Vinícius Francisco Wasques](https://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4355089T5).
 
 <div align="center">
 <sub>Distribuído sob a Licença GPL-3.0. Consulte o arquivo <a href="LICENSE">LICENSE</a> para mais detalhes.</sub>
